@@ -4,7 +4,7 @@ import handlebars from "express-handlebars";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
 
-// import router from "./router.js";
+import router from "./router.js";
 import pageHelper from "./helpers/pageHelper.js";
 import { authMiddleware } from "./middlewares/authMiddleware.js";
 
@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(authMiddleware);
 
 // routing
-// app.use(router);
+app.use(router);
 
 // start
 app.listen(PORT, () => console.log(`Server is listening on http://localhost:${PORT}`));
