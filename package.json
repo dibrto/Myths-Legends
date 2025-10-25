@@ -1,0 +1,32 @@
+{
+  "name": "node-js-backend",
+  "version": "1.0.0",
+  "description": "Node js backend project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "node --watch ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanKa7A0/Mind-Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/DanKa7A0/Mind-Blog/issues"
+  },
+  "homepage": "https://github.com/DanKa7A0/Mind-Blog#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1"
+  }
+}
