@@ -1,11 +1,11 @@
 import { Router } from "express";
 import homeController from "./controllers/homeController.js";
-// import authController from "./controllers/authController.js";
+import authController from "./controllers/authController.js";
 
 const router = Router();
 
 router.use(homeController);
-// router.use(authController);
+router.use(authController);
 
 // TODO: fix 404
 router.get("*splat", (req, res) => {
