@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import "dotenv/config";
 
 // import router from "./router.js";
-// import pageHelper from "./helpers/pageHelper.js";
+import pageHelper from "./helpers/pageHelper.js";
 import { authMiddleware } from "./middlewares/authMiddleware.js";
 
 const app = express();
@@ -29,9 +29,9 @@ app.engine(("hbs"), handlebars.engine({
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true,
     }
-    // , helpers: {
-    //     ...pageHelper
-    // }
+    , helpers: {
+        ...pageHelper
+    }
 }));
 app.set("view engine", "hbs");
 app.set("views", "src/views");
