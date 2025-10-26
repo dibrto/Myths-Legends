@@ -31,3 +31,7 @@ export async function getAllMyths(){
 export async function getOneMyth(myth_ID){
     return Myth.findById(myth_ID);
 }
+
+export async function likeMyth(myth_ID, user_ID){
+    return Myth.findByIdAndUpdate(myth_ID, {$push: {likedList: user_ID}});
+}

@@ -32,5 +32,12 @@ mythController.get("/details/:id", async (req, res) => {
     res.render("myths/details", { myth: mythData, isCreator, isLiked });
 });
 
+mythController.get("/like/:id", async (req, res) => {
+    const myth_ID = req.params.id;
+    const user_ID = req.user.id;
+
+    await mythService.likeMyth(myth_ID, user_ID);
+    res.redirect(`/myths/details/${myth_ID}`);
+});
 
 export default mythController;
