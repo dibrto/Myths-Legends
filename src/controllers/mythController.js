@@ -27,8 +27,9 @@ mythController.get("/details/:id", async (req, res) => {
     const mythData = await mythService.getOneMyth(myth_ID);
 
     const isCreator = mythData.owner.equals(req.user?.id);
+    const isLiked = mythData.likedList.some(x => x.equals(req.user?.id));
 
-    res.render("myths/details", { myth: mythData, isCreator });
+    res.render("myths/details", { myth: mythData, isCreator, isLiked });
 });
 
 

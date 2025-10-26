@@ -36,11 +36,14 @@
             {{#if isAuthenticated}}
                 <div id="action-buttons">
                     {{#if isCreator}}
-                        <a href="#" id="edit-btn">Edit</a>
-                        <a href="#" id="delete-btn">Delete</a>
+                        <a href="/myths/edit/{{myth.id}}" id="edit-btn">Edit</a>
+                        <a href="/myths/delete/{{myth.id}}" id="delete-btn">Delete</a>
                     {{else}}
-                        <a href="#" id="like-btn">Like</a>
-                        <p id="already-liked">You've already liked this legend!</p>
+                        {{#if isLiked}}
+                            <p id="already-liked">You've already liked this legend!</p>
+                        {{else}}
+                            <a href="/myths/likes/{{myth.id}}" id="like-btn">Like</a>
+                        {{/if}}    
                     {{/if}}
                 </div>
             {{/if}}
