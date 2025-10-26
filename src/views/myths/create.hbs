@@ -3,14 +3,14 @@
     <section id="create">
         <div class="form">
             <h2>create Myth or Legend</h2>
-            <form class="create-form">
-                <input type="text" id="name" placeholder="Name" />
-                <input type="text" id="origin" placeholder="Origin (e.g. Greek, Norse, Egyptian)" />
-                <input type="text" id="role" placeholder="Role" />
-                <input type="text" id="myth-img" placeholder="Image URL" />
-                <input type="text" id="symbol" placeholder="Symbol / Attribute" />
-                <input type="text" id="era" placeholder="Era or Period" />
-                <textarea id="description" placeholder="Description..." name=""></textarea>
+            <form method="post" class="create-form">
+                <input type="text" id="name" name="name" placeholder="Name" value="{{myth.name}}"/>
+                <input type="text" id="origin" name="origin" placeholder="Origin (e.g. Greek, Norse, Egyptian)" value="{{myth.origin}}"/>
+                <input type="text" id="role" name="role" placeholder="Role" value="{{myth.role}}"/>
+                <input type="text" id="myth-img"name="image" placeholder="Image URL" value="{{myth.image}}"/>
+                <input type="text" id="symbol" name="symbol" placeholder="Symbol / Attribute" value="{{myth.symbol}}"/>
+                <input type="text" id="era" name="era" placeholder="Era or Period" value="{{myth.era}}"/>
+                <textarea id="description"name="description"  placeholder="Description...">{{myth.description}}</textarea>
                 <button type="submit">create</button>
             </form>
 
