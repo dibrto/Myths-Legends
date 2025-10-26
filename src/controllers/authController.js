@@ -10,17 +10,19 @@ authController.get("/register", isGuest, (req, res) => {
     res.render("auth/register");
 });
 
-// authController.post("/register", isGuest, async (req, res) => {
-//     const userData = req.body;
-//     try {
-//         const token = await authService.register(userData);
-//         res.cookie("auth", token).redirect("/");
-//     }
-//     catch(err){        
-//         const errMsg = getErrMsg(err);
-//         res.render("auth/register", {errMsg, userData});
-//     }
-// });
+authController.post("/register", isGuest, async (req, res) => {
+        console.log("Register Page");
+    const userData = req.body;
+
+    try {
+        const token = await authService.register(userData);
+        res.cookie("auth", token).redirect("/");
+    }
+    catch(err){        
+        const errMsg = getErrMsg(err);
+        res.render("auth/register", {errMsg, user: userData});
+    }
+});
 
 // TODO: Fix login
 authController.get("/login", isGuest, (req, res) => {
