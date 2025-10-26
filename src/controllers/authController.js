@@ -23,22 +23,22 @@ authController.post("/register", isGuest, async (req, res) => {
     }
 });
 
-// TODO: Fix login
 authController.get("/login", isGuest, (req, res) => {
     res.render("auth/login");
 });
 
-// authController.post("/login", isGuest, async (req, res) => {
-//     const userData = req.body;
-//     try {
-//         const token = await authService.login(userData);
-//         res.cookie("auth", token).redirect("/");
-//     }
-//     catch(err){        
-//         const errMsg = getErrMsg(err);
-//         res.render("auth/login", {errMsg, userData});
-//     }
-// });
+authController.post("/login", isGuest, async (req, res) => {
+    const userData = req.body;
+
+    try {
+        const token = await authService.login(userData);
+        res.cookie("auth", token).redirect("/");
+    }
+    catch(err){        
+        const errMsg = getErrMsg(err);
+        res.render("auth/login", {errMsg, user: userData});
+    }
+});
 
 authController.get("/logout", isAuth, (req, res) => {
     res.clearCookie("auth").redirect("/");

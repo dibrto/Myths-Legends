@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import { GenerateToken } from "../utils/tokenUtil.js";
 
-export async function register(userData) {    
+export async function register(userData) {
     if (userData.password !== userData.rePassword){
         throw new Error("Passwords don't match");
     }
