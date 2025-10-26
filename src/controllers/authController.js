@@ -7,8 +7,7 @@ const authController = Router();
 
 // TODO: Fix register
 authController.get("/register", isGuest, (req, res) => {
-    res.send("Register Page");
-    // res.render("auth/register");
+    res.render("auth/register");
 });
 
 // authController.post("/register", isGuest, async (req, res) => {
