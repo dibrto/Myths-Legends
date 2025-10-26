@@ -10,13 +10,13 @@ const mythSchema = new Schema({
     , origin: {
         type: String
         , required: [true, "Origin is required"]
-        , minLength: [3, "Name must be at least 3 characters long"]
+        , minLength: [3, "Origin must be at least 3 characters long"]
     }
 
     , role: {
         type: String
         , required: [true, "Role is required"]
-        , minLength: [2, "Name must be at least 2 characters long"]
+        , minLength: [2, "Role must be at least 2 characters long"]
     }
 
     , image: {
@@ -28,21 +28,21 @@ const mythSchema = new Schema({
     , symbol: {
         type: String
         , required: [true, "Symbol is required"]
-        , minLength: [3, "Name must be at least 3 characters long"]
-        , maxLength: [40, "Name must be at least 40 characters long"]
+        , minLength: [3, "Symbol must be at least 3 characters long"]
+        , maxLength: [40, "Symbol must be max 40 characters long"]
     }
 
     , era: {
         type: String
         , required: [true, "Era is required"]
-        , minLength: [5, "Name must be at least 5 characters long"]
-        , maxLength: [15, "Name must be at least 15 characters long"]
+        , minLength: [5, "Era must be at least 5 characters long"]
+        , maxLength: [15, "Era must be max 15 characters long"]
     }
 
     , description: {
         type: String
         , required: [true, "Description is required"]
-        , minLength: [10, "Name must be at least 10 characters long"]
+        , minLength: [10, "Description must be at least 10 characters long"]
     }
 
     , owner: {
