@@ -54,7 +54,9 @@ const mythSchema = new Schema({
         type: Schema.Types.ObjectId
         , ref: "User"
     }]
-});
+}
+, { timestamps: true }
+);
 
 const Myth = model("Myth", mythSchema);
 
