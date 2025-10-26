@@ -27,3 +27,7 @@ export async function getAllMyths(){
             , image: 1
         });
 }
+
+export async function getOneMyth(myth_ID){
+    return Myth.findById(myth_ID);
+}
