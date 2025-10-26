@@ -48,6 +48,12 @@ mythController.get("/delete/:id", isAuth, async (req, res) => {
     res.redirect("/dashboard");
 });
 
+mythController.get("/edit/:id", isAuth, async (req, res) => {
+    const myth_ID = req.params.id;
+
+    res.render("myths/edit");
+});
+
 
 
 export default mythController;
