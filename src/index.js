@@ -37,6 +37,7 @@ app.set("views", "src/views");
 // setup
 app.use(express.static("src/public"));
 app.use(express.urlencoded());
+app.use(express.json());
 app.use(cookieParser());
 app.use(authMiddleware);
 
