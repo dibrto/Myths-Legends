@@ -11,8 +11,7 @@ router.use("/myths", mythController);
 
 // TODO: fix 404
 router.get("*splat", (req, res) => {
-    res.send("404");
-    // res.render("404");
+    res.render("404");
 });
 
 export default router;
