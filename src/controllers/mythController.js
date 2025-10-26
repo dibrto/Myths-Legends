@@ -50,8 +50,9 @@ mythController.get("/delete/:id", isAuth, async (req, res) => {
 
 mythController.get("/edit/:id", isAuth, async (req, res) => {
     const myth_ID = req.params.id;
+    const mythData = await mythService.getOneMyth(myth_ID);
 
-    res.render("myths/edit");
+    res.render("myths/edit", {myth: mythData });
 });
 
 
