@@ -17,9 +17,8 @@ homeController.get("/dashboard", async (req, res) => {
 homeController.get("/report", async (req, res) => {
     try { 
         const response = await fetch("http://localhost:3000/api/report/myths/latest");
-        const data = await response.json();
-        console.log(data);        
-        res.render("report", { myth: data});
+        const data = await response.json();    
+        res.render("report", { myths: data});
     }
     catch (err) {
         const errMsg = getErrMsg(err);
