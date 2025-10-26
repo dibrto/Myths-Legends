@@ -1,3 +1,8 @@
-export async function createMyth(mythData){
-    console.log("Creating myth:", mythData);
+import Myth from "../models/Myth.js";
+
+export async function createMyth(mythData, user_ID){
+    return Myth.create({
+        ...mythData
+        , owner: user_ID
+    });
 }
