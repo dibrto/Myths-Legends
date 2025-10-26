@@ -13,5 +13,6 @@ export async function getLastThreeMyths(){
           , image: 1
           , owner: 1
           , createdAt: 1
-        });
+        })
+        .populate("owner", "email");
 }
