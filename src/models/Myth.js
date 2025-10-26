@@ -54,8 +54,28 @@ const mythSchema = new Schema({
         type: Schema.Types.ObjectId
         , ref: "User"
     }]
+
+    , createdAt: {
+        type: Date
+        , default: Date.now
+        , get: (v) => {
+            if (!v) 
+                return v;
+            return new Date(v).toLocaleDateString('bg-BG', {
+                timeZone: 'Europe/Sofia',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            })
+            .replace(/\s*г\.$/, '');
+        }
+    }
 }
-, { timestamps: true }
+, { 
+    toJSON: { getters: true }
+    , toObject: { getters: true }
+    , timestamps: { createdAt: "createdAt" } 
+}
 );
 
 const Myth = model("Myth", mythSchema);
