@@ -17,3 +17,13 @@ export async function getLastThreeMyths(){
             , image: 1
         });
 }
+
+export async function getAllMyths(){
+    return Myth.find()
+        .select({
+            name: 1
+            , origin: 1
+            , role: 1
+            , image: 1
+        });
+}

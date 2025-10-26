@@ -8,4 +8,9 @@ homeController.get("/", async (req, res) => {
     res.render("home", { myths: mythsData });
 });
 
+homeController.get("/dashboard", async (req, res) => {
+    const mythsData = await mythService.getAllMyths();
+    res.render("dashboard", { myths: mythsData });
+});
+
 export default homeController;
