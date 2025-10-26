@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { mythService } from "../services/index.js";
+import { getErrMsg } from "../utils/errorUtil.js";
 
 const homeController = Router();
 
@@ -14,7 +15,16 @@ homeController.get("/dashboard", async (req, res) => {
 });
 
 homeController.get("/report", async (req, res) => {
-    res.render("report");
+    try { 
+        const response = await fetch("http://localhost:3000/api/report/myths/latest");
+        const data = await response.json();
+        console.log(data);        
+        res.render("report", { myth: data});
+    }
+    catch (err) {
+        const errMsg = getErrMsg(err);
+        res.render("report", {errMsg, myth: null});
+    }
 });
 
 export default homeController;
