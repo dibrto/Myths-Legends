@@ -1,14 +1,15 @@
 import { Router } from "express";
 import { mythService } from "../services/index.js";
 import { getErrMsg } from "../utils/errorUtil.js";
+import { isAuth } from "../middlewares/authMiddleware.js";
 
 const mythController = Router();
 
-mythController.get("/create", (req, res) => {
+mythController.get("/create", isAuth, (req, res) => {
     res.render("myths/create");
 });
 
-mythController.post("/create", async (req, res) => {
+mythController.post("/create", isAuth, async (req, res) => {
     const mythData = req.body;
     const user_ID = req.user.id;
 
@@ -32,12 +33,21 @@ mythController.get("/details/:id", async (req, res) => {
     res.render("myths/details", { myth: mythData, isCreator, isLiked });
 });
 
-mythController.get("/like/:id", async (req, res) => {
+mythController.get("/like/:id", isAuth, async (req, res) => {
     const myth_ID = req.params.id;
     const user_ID = req.user.id;
 
     await mythService.likeMyth(myth_ID, user_ID);
     res.redirect(`/myths/details/${myth_ID}`);
 });
+
+mythController.get("/delete/:id", isAuth, async (req, res) => {
+    const myth_ID = req.params.id;
+
+    await mythService.deleteMyth(myth_ID);
+    res.redirect("/dashboard");
+});
+
+
 
 export default mythController;
