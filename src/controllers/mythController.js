@@ -55,6 +55,19 @@ mythController.get("/edit/:id", isAuth, async (req, res) => {
     res.render("myths/edit", {myth: mythData });
 });
 
+mythController.post("/edit/:id", isAuth, async (req, res) => {
+    const myth_ID = req.params.id;
+    const mythData = req.body;
 
+    try {
+        await mythService.updateMyth(myth_ID, mythData);
+        res.redirect(`/myths/details/${myth_ID}`);
+    }
+    catch(err){
+        const errMsg = getErrMsg(err);
+        res.render("myths/edit", {errMsg, myth: mythData});
+    }    
+
+});
 
 export default mythController;

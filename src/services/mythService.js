@@ -37,7 +37,7 @@ export async function likeMyth(myth_ID, user_ID){
 }
 
 export async function updateMyth(myth_ID, mythData){
-    return Myth.findByIdAndUpdate(myth_ID, mythData);
+    return Myth.findByIdAndUpdate(myth_ID, mythData, {runValidators: true});
 }
 
 export async function deleteMyth(myth_ID){
