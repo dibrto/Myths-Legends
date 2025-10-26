@@ -9,7 +9,7 @@ export async function createMyth(mythData, user_ID){
 
 export async function getLastThreeMyths(){
     return Myth.find()
-        .sort({ id: -1 })
+        .sort({ _id: -1 })
         .limit(3)
         .select({
             name: 1
