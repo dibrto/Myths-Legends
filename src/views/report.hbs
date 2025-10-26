@@ -25,7 +25,8 @@
         {{/if}}
 
         <!-- Display an h2 if an error occurs -->
-        <!-- <h2 id="no-post">Error loading report! </h2> -->
-
+        {{#if error}}
+            <h2 id="no-post">Error loading report! </h2>
+        {{/if}}
     </section>
 </main>

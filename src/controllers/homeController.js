@@ -21,8 +21,8 @@ homeController.get("/report", async (req, res) => {
         res.render("report", { myths: data});
     }
     catch (err) {
-        const errMsg = getErrMsg(err);
-        res.render("report", {errMsg, myth: null});
+        const error = getErrMsg(err);
+        res.render("report", {error, myth: null});
     }
 });
 
