@@ -25,8 +25,7 @@ authController.post("/register", isGuest, async (req, res) => {
 
 // TODO: Fix login
 authController.get("/login", isGuest, (req, res) => {
-    res.send("Login Page");
-    // res.render("auth/login");
+    res.render("auth/login");
 });
 
 // authController.post("/login", isGuest, async (req, res) => {
