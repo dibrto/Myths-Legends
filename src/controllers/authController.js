@@ -5,7 +5,6 @@ import { isAuth, isGuest } from "../middlewares/authMiddleware.js";
 
 const authController = Router();
 
-// TODO: Fix register
 authController.get("/register", isGuest, (req, res) => {
     res.render("auth/register");
 });

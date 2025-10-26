@@ -20,17 +20,19 @@
                     <a href="#">Report</a>
                 </div>
 
-                <!-- Logged-in users -->
-                <div class="user">
-                    <a href=".#">Add Myth</a>
-                    <a href="#">Logout</a>
-                </div>
-
-                <!-- Guest users -->
-                <div class="guest">
-                    <a href="/login">Login</a>
-                    <a href="/register">Register</a>
-                </div>
+                {{#if isAuthenticated}}
+                    <!-- Logged-in users -->
+                    <div class="user">
+                        <a href=".#">Add Myth</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                {{else}}
+                    <!-- Guest users -->
+                    <div class="guest">
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    </div>
+                {{/if}}
             </nav>
         </header>
 
