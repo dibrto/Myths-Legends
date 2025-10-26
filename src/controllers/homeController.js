@@ -1,10 +1,11 @@
 import { Router } from "express";
+import { mythService } from "../services/index.js";
 
 const homeController = Router();
 
-// TODO: fix home
 homeController.get("/", async (req, res) => {
-    res.render("home");
+    const mythsData = await mythService.getLastThreeMyths();
+    res.render("home", { myths: mythsData });
 });
 
 export default homeController;
