@@ -13,4 +13,8 @@ homeController.get("/dashboard", async (req, res) => {
     res.render("dashboard", { myths: mythsData });
 });
 
+homeController.get("/report", async (req, res) => {
+    res.render("report");
+});
+
 export default homeController;
