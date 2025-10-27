@@ -31,3 +31,21 @@ npm start
 - ❤️ **Like System — users can like myths they don’t own**
 - 🔍 **Details Page — full myth info with conditional buttons (Edit/Delete/Like)**
 - 🧾 **Report Page — dynamically loads the latest 3 myths via REST API**
+
+- | Endpoint                   | Method | Description                           |
+| -------------------------- | ------ | ------------------------------------- |
+| `/api/report/myths/latest` | GET    | Returns 3 latest myths in JSON format |
+```json
+[
+  {
+    "name": "Zeus",
+    "origin": "Greek",
+    "role": "God of Thunder",
+    "symbol": "Lightning Bolt",
+    "era": "Ancient Greece",
+    "image": "https://...",
+    "ownerEmail": "zeus@olympus.com",
+    "createdAt": "26/10/2025"
+  }
+]
+```
