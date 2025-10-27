@@ -31,7 +31,8 @@ npm start
 - ❤️ **Like System — users can like myths they don’t own**
 - 🔍 **Details Page — full myth info with conditional buttons (Edit/Delete/Like)**
 - 🧾 **Report Page — dynamically loads the latest 3 myths via REST API**
-  
+
+## API
 | Endpoint                   | Method | Description                           |
 | -------------------------- | ------ | ------------------------------------- |
 | `/api/report/myths/latest` | GET    | Returns 3 latest myths in JSON format |
