@@ -32,7 +32,7 @@ npm start
 - 🔍 **Details Page — full myth info with conditional buttons (Edit/Delete/Like)**
 - 🧾 **Report Page — dynamically loads the latest 3 myths via REST API**
 
-## API
+## 🌐 REST API
 | Endpoint                   | Method | Description                           |
 | -------------------------- | ------ | ------------------------------------- |
 | `/api/report/myths/latest` | GET    | Returns 3 latest myths in JSON format |
